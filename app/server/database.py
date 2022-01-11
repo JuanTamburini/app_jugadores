@@ -20,7 +20,7 @@ def jugador_helper(jugador) -> dict:
         "activo": jugador["activo"]
     }
 
-async def request_jugadores():
+async def solicitar_jugadores():
     
     jugadores = []
 
