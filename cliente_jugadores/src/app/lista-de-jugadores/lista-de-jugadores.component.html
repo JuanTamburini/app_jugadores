@@ -1,0 +1,24 @@
+<div class="container mt-5">
+    
+    <h3>Lista de jugadores</h3>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Pais</th>
+            <th scope="col">Club</th>
+            <th scope="col">Edad</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let usuario of usuarios">
+            <td>{{usuario.userId}}</td>
+            <td>{{usuario.id}}</td>
+            <td>{{usuario.title}}</td>
+            <td>{{usuario.body}}</td>
+        </tr>
+        </tbody>
+    </table>
+    
+</div>

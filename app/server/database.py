@@ -26,7 +26,6 @@ async def solicitar_jugadores():
 
     async for jugador in jugador_collection.find():
         jugadores.append(jugador_helper(jugador))
-
     return jugadores
 
 async def agregar_jugador(data: dict) -> dict:
