@@ -8,9 +8,8 @@ export interface Jugador {
     activo: boolean
 }
 
-export interface Usuario {
-    userId: number,
-    id: number,
-    title: string,
-    body: string
+export interface ApiJson {
+    data: Array<Jugador>;
+    code: number;
+    message: string
 }
