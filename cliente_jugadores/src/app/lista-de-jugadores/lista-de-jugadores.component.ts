@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Jugador, Usuario } from '../models/jugador';
+import { ApiJson, Jugador } from '../models/jugador';
 import { HttpJugadoresService } from '../servicios/http-jugadores.service';
 
 @Component({
@@ -9,15 +9,23 @@ import { HttpJugadoresService } from '../servicios/http-jugadores.service';
 })
 export class ListaDeJugadoresComponent implements OnInit {
 
-  jugadores: Array<Jugador> = []
-  usuarios: Array<Usuario> = []
-
+  apiGet: ApiJson = {
+    data: [],
+    code: 0,
+    message: ''
+  }
+  jugadores: Array<Jugador> = [];
 
   constructor(private httpService: HttpJugadoresService) { }
 
   ngOnInit(): void {
     this.httpService.getJugadores().subscribe((jugadoresApi)=>{
-      this.usuarios = jugadoresApi
+      this.apiGet.data = jugadoresApi.data
+      this.apiGet.code = jugadoresApi.code
+      this.apiGet.message = jugadoresApi.message
+      this.jugadores = this.apiGet.data
+      console.log(this.apiGet)
+      console.log(this.jugadores)
     })
   }
 
